@@ -1,0 +1,29 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Environments & IDEs
+venv/
+.venv/
+env/
+.vscode/
+.idea/
+
+# Testing & Coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# MLOps Binary Model Artifacts (MUST NOT go to Git)
+ml_artifacts/*.onnx
+ml_artifacts/*.bin
+ml_artifacts/*.pt
+ml_artifacts/*.safetensors
+
+# OS Metadata
+.DS_Store
+Thumbs.db
