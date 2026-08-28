@@ -33,6 +33,16 @@ jobs:
           pip install -r requirements.txt
           pip install pytest httpx
 
+      - name: Fetch Model Artifacts from S3
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_DEFAULT_REGION: ${{ secrets.AWS_REGION }}
+          S3_BUCKET_NAME: "bug-trage-proj-s333"
+          MODEL_S3_PREFIX: "v1"
+        run: |
+          python src/fetch_artifacts.py
+
       - name: Run Pytest Test Suite
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
