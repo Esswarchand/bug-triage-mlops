@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: bug-triage-config
+  namespace: bug-triage
+data:
+  AWS_DEFAULT_REGION: "ap-south-1"
+  S3_BUCKET_NAME: "bug-trage-proj-s333"
+  MODEL_S3_PREFIX: "v1"
+  OPENSEARCH_HOST: "vpc-bug-triage-mlops-search-nolcljkyed66hyujmm2ygr6yo4.ap-south-1.es.amazonaws.com"
+  OPENSEARCH_INDEX: "historic-bugs"
