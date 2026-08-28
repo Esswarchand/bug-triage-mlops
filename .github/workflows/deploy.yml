@@ -103,13 +103,10 @@ jobs:
           IMAGE_TAG: ${{ github.sha }}
         run: |
           # Apply namespace, configmap, serviceaccount, and service
-          kubectl apply -f k8s/namespace.yaml
-          kubectl apply -f k8s/configmap.yaml
-          kubectl apply -f k8s/serviceaccount.yaml
-          kubectl apply -f k8s/service.yaml
+          kubectl apply -f k8s/
 
           # Dynamically set container image to the exact Git SHA tag
-          kubectl set image deployment/bug-triage-api api=$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG -n bug-triage --dry-run=client -o yaml | kubectl apply -f -
+          kubectl set image deployment/bug-triage-api api=$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG -n bug-triage
 
       - name: Verify Deployment Rollout Status
         run: |
