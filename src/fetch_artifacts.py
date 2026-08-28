@@ -4,11 +4,7 @@ import boto3
 from botocore.exceptions import BotoCoreError, ClientError
 
 # Configuration
-<<<<<<< HEAD
 BUCKET_NAME = "bug-trage-proj-s333"  # Replace with your actual S3 bucket name
-=======
-BUCKET_NAME = "<your-unique-bucket-name>"  # Replace with your actual S3 bucket name
->>>>>>> 9038f83a61f7bd06a683b5786fc467fd55da91e0
 S3_PREFIX = "v1"
 ARTIFACTS_DIR = "ml_artifacts"
 
